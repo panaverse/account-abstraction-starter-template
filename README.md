@@ -11,21 +11,15 @@ This step demonstrates how to create a complete signup/login flow using your wal
 
 ```
 CREATE TABLE "Users" (
-  "entity_id" INT,
-  "firstName" VARCHAR(50),
-  "lastName" VARCHAR(50),
-  "email" VARCHAR(50),
+  "userId" SERIAL,
   "secretText" VARCHAR(50),
-  "pictureUrl" VARCHAR(50),
   "creationDate" TIMESTAMP NOT NULL DEFAULT now(),
-  "emailVerified" bit,
   "nonce" VARCHAR(50),
   "publicAddress" VARCHAR(50),
-  PRIMARY KEY ("entity_id")   
+  PRIMARY KEY ("userId")
 );
 ```
 
-We have added alot of extra fields in this table like firstname, lastname email etc for future use, but we will only be storing public address of the user in this step.
 
 3) Create a project ID from zero dev's dashboard and get the connection string of your neon database. Enter the zero-dev project id and neon connection string as enviornment variables in the next.config.js file
 
